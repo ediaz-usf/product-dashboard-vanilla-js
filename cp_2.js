@@ -5,6 +5,7 @@ function displayProducts(products) {
     for (let i = 0; i < 5; i++) {
         const product = products[i];
         const item = document.createElement('div');
+        item.className = 'product-card';
         item.innerHTML = `
             <h2>${product.fields.name}</h2>
             <img src="${product.fields.image[0].url}" width="100"/>
