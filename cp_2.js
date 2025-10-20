@@ -6,4 +6,5 @@ function fetchProductsThen() {
         .catch((error) => {
             console.log(error);
         });
-}
+};
+
