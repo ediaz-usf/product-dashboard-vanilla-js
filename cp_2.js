@@ -1,10 +1,23 @@
 // define displayProducts function
 function displayProducts(products) {
-    const productContainer = document.getElementById('product-container');
+    const productContainer = document.querySelector('#product-container');
 
-    for (let product of products) {
-
+    for (let i = 0; i < 5; i++) {
+        const product = products[i];
+        const item = document.createElement('div');
+        item.innerHTML = `
+            <h2>${product.fields.name}</h2>
+            <img src="${product.fields.image[0].url}" width="100"/>
+            <p>${(product.fields.price / 100)}</p>
+        `;
+        productContainer.appendChild(item);
     }
+}
+
+// define error handling function
+function handleError(err) {
+    console.log('ERROR!!!');
+    console.log(err);
 }
 
 // define function to retrieve data using .then() method
@@ -30,8 +43,8 @@ async function fetchProductsAsync() {
             throw new Error('ERROR!');
         }
         const products = await response.json();
-    
         displayProducts(products);
+
     } catch (err) {
         handleError(err);
     }
