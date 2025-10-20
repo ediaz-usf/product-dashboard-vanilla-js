@@ -50,4 +50,6 @@ async function fetchProductsAsync() {
     }
 }
 
-fetchProductsAsync()
+// call the functions
+fetchProductsThen();
+fetchProductsAsync();
