@@ -16,7 +16,7 @@ function displayProducts(products) {
 
 // define error handling function
 function handleError(err) {
-    console.log('ERROR!!!');
+    console.log('An error occurred:');
     console.log(err);
 }
 
